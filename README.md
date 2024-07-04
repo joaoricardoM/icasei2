@@ -4,11 +4,10 @@
 
 ## 📝 Descrição
 
-Desenvolver uma aplicação HTML5.
+Desenvolver uma aplicação HTML5. Criar duas aplicações micro-frontend (mf_drawer e mf_videos)
 
 ## ⚙️ Funcionalidades
 
-Criar duas aplicações micro-frontend (no wireframe, mf_drawer e mf_videos)
 A aplicação MF_DRAWER deve ter dois links, VÍDEOS E FAVORITOS e a aplicação MF_VIDEOS deve conter a busca e listagens.
 
 - VÍDEOS:
