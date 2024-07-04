@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MF Drawer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://www.icasei.com.br/favicon.ico?v=2">
+</head>
+<body>
+  <nav class="sidebar">
+    <a href="/videos" id="videos-link" class="nav-link active">Vídeos</a>
+    <a href="/favoritos" id="favoritos-link" class="nav-link">Favoritos <span id="favorites-count"></span></a></a>
+  </nav>
+  <div class="content-box">
+    <div id="content" class="videos-favorites">
+          <!-- Conteúdo de vídeos aqui (será preenchido dinamicamente) -->
+    </div>
+  </div>
+  <footer id="footer">
+    <div id="favorites-counter" class="footer-item"></div>
+  </footer>
+  <div id="toast-container"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+

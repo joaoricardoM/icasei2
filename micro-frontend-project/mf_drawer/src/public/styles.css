@@ -1,0 +1,170 @@
+body {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Altura total da viewport */
+}
+
+nav.sidebar {
+  width: 250px;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Altura total da sidebar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto; /* Adicionar scroll caso o conteúdo seja maior que a altura da sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar a sidebar */
+}
+
+.nav-link {
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #575757;
+}
+
+.nav-link.active {
+  background-color: #575757; /* Cor de fundo para link ativo */
+}
+
+.content-box {
+  margin-left: 250px; /* Largura da sidebar */
+  padding: 20px;
+  width: calc(100% - 250px); /* Ajuste para o conteúdo ocupar o espaço restante */
+  background-color: white; /* Fundo branco para o conteúdo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Altura total da viewport */
+}
+
+.footer-item {
+  background-color: #eee; /* Fundo cinza claro para o rodapé */
+  padding: 10px;
+  text-align: center;
+}
+
+/* Adicionado para centralizar e espaçar os vídeos favoritos */
+.favorites-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os vídeos */
+}
+
+.video-wrapper {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px; /* Largura fixa para centralizar os vídeos */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para a tela de boas-vindas */
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right, #61dafb, #1a73e8);
+  color: #ffffff;
+  text-align: center;
+}
+
+.welcome-screen h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.welcome-screen p {
+  font-size: 24px;
+}
+
+.welcome-screen button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #282c34;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.welcome-screen button:hover {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.remove-favorite-button {
+  padding: 8px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e40a0a;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.remove-favorite-button:hover {
+  background-color: #fa4b4b;
+  color: #282c34;
+}
+
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toast {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(-20px);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.hide {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.toast.success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.toast.error {
+  background-color: #dc3545;
+  color: #fff;
+}
