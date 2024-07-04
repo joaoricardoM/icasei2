@@ -1,0 +1,270 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Altura total da viewport */
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: 100%;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Espaço à esquerda para o ícone */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilização do ícone */
+.input-container .fa-search {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+#search-button {
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+  background-color: #0056b3;
+}
+
+.videos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 100%; /* Altura total da viewport */
+}
+
+.video-list-container {
+  width: 300px;
+  height: 300px;
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  padding: 15px;
+}
+
+.video-list-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-item {
+  width: 300px;
+  height: 280px;
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-item img {
+  width: 100%;
+  height: auto;
+}
+
+.video-item h3 {
+  font-size: 18px;
+  margin: 15px;
+}
+
+.video-item p {
+  font-size: 14px;
+  margin: 15px;
+  color: #666;
+}
+
+.video-item button {
+  margin: 15px;
+  padding: 0.5rem;
+  width: calc(100% - 30px);
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.video-item button:hover {
+  background-color: #0056b3;
+}
+
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toast {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(-20px);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.hide {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.toast.success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.toast.error {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+#videos-random {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 100%; /* Altura total da viewport */
+}
+
+.video {
+  width: 300px;
+  height: 300px;
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  padding: 15px;
+}
+
+.video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+h6 {
+  display: flex;
+  margin-left: 25px;
+  font-size: 0.7rem;
+  margin: 15px;
+}
+
+iframe {
+  display: flex;
+  margin-left: 25px;
+  width: 250px;
+  height: 200px;
+  border: none;
+}
+
+.favorites-button {
+  background-color: transparent;
+  border: 2px solid gold;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.favorites-button .star {
+  color: gray;
+  font-size: 1.5em;
+}
+
+.favorites-button.favorited .star {
+  color: gold;
+}
+
+.favorites-button:hover {
+  transform: scale(1.2);
+}
+
+.favorites-button:focus {
+  outline: none;
+}
+
+.favorite-button {
+  background-color: transparent;
+  border: 2px solid gold;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.2);
+}
+
+.favorite-button:focus {
+  outline: none;
+}
