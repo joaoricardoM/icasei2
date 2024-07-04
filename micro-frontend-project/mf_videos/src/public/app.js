@@ -76,6 +76,17 @@ document.getElementById('search-button').addEventListener('click', () => {
   }
 })
 
+function updateFavorites() {
+  fetch('http://192.168.30.20:3002/favorites/count')
+    .then((response) => response.json())
+    .then((data) => {
+      return (favoritesCountSpan.textContent = `(${data.count})`)
+    })
+    .catch((error) => {
+      console.error('Error updating favorites counter:', error)
+    })
+}
+
 function loadRandomVideos() {
   fetch('http://192.168.30.20:3001/search')
     .then((response) => response.json())
@@ -126,7 +137,7 @@ function createStarElement(videoId, title) {
           }).then(() => {
             showToast('Adicionado aos favoritos com sucesso!', 'success')
             button.classList.add('favorited')
-            updateFavoritesCounter()
+            updateFavorites()
           })
         }
       })
