@@ -13,6 +13,7 @@
     <a href="/favoritos" id="favoritos-link" class="nav-link">Favoritos <span id="favorites-count"></span></a></a>
   </nav>
   <div class="content-box">
+    <div id="particles-js"></div>
     <div id="content" class="videos-favorites">
           <!-- Conteúdo de vídeos aqui (será preenchido dinamicamente) -->
     </div>
@@ -22,6 +23,13 @@
   </footer>
   <div id="toast-container"></div>
   <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Inicializar particles.js
+    particlesJS.load('particles-js', 'particles-config.json', function() {
+      console.log('particles.js config loaded');
+    });
+  </script>
 </body>
 </html>
 
